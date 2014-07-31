@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Code: Kids</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="index.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: And/Or
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+               <div ng-app = 'myApp'>
+
+	<div ng-controller='myController'>
+		<p>{{question}}</p>
+		<img ng-src={{redlego}} width = "100" height = "100" ng-click="onClick(redlego);">
+		<img ng-src={{bluelego}} width = "100" height = "100" ng-click="onClick(bluelego);">
+		<img ng-src={{check}} width = "100" height = "100">
+		<button id="next" ng-click="nextQuestion()">Next</button>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<!--<script src="https://ajax.googleapis.comajax/libs/angularjs/1.2.16/angular-route.js"></script>-->
+	
+	<script>
+		var myApp = angular.module('myApp',[]);
+
+
+
+		myApp.controller('myController', function($scope) {
+			var questionBank = ["Select red AND blue.", "Select red OR blue."];
+			var blockCount = 0;
+			var questionCount = 0;
+
+			$scope.question = questionBank[0];
+			$scope.redlego = "images/pink.png";
+			$scope.bluelego = "images/blue.png";
+			$scope.check = "images/redx.jpg";
+
+			$scope.onClick = function(image) {
+		      	blockCount++;
+		      	if ((blockCount == 1) && (questionCount == 1)) {
+		      		$scope.check = "images/greencheck.jpg";
+		      	}
+		      	else if ((blockCount == 2) && (questionCount == 0)) {
+		      		$scope.check = "images/greencheck.jpg";
+		      	}
+		    }
+
+		    $scope.nextQuestion = function() {
+		    	questionCount++;
+		    	if (questionCount == questionBank.length) {
+		    		$scope.question = questionBank[0];
+		    		questionCount = 0;
+		    	}
+		    	else if (questionCount == 1)
+		    		$scope.question = questionBank[1];
+		    	else {
+		    		$scope.question = questionBank[0];
+		    		questionCount = 0;
+		    	}
+
+		    	blockCount = 0;
+		    	$scope.check = "images/redx.jpg";
+				
+				$('#andor').modal('show');
+		    }
+			
+
+		});
+	</script>
+    </div>
+
+
+                </div>
+
+            <div class="col-md-4">
+                <h3>What To Do</h3>
+                <p>When you see "and," choose the red lego AND the blue lego. When you see "or," choose one OR the other. Click next to see the difference.</p>
+                <p>Choose one or two legos to begin.</p>
+                
+                
+                <a href="andorlesson.html" class="btn btn-primary right margin_top" style="margin-top:70px;">Go to next lesson!</a>
+                
+            </div>
+
+        </div>
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+     <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+ <!-- Modal -->
+<div class="modal fade" id="andor" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Congrats! You've earned a new badge!</h4>
+      </div>
+      <div class="modal-body">
+      <div class="badges">
+        	<div class="success">
+            	<img src="images/badge3.png">
+            </div>
+      </div>
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+    
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

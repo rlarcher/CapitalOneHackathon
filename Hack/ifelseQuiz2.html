@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                	<li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="index.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Quiz: If/Else Statements</h1>
+               
+
+
+                <script>
+var one = 0;
+var two = 0;
+
+var first = "ans";
+var second = "ans2";
+
+function answer1()
+{
+//window.alert("sup");
+var mylist=document.getElementById("myList1");
+first = mylist.options[mylist.selectedIndex].text;
+//window.alert("outside if and first= " + first);
+
+//window.alert("one = "+one);
+if(first === "Gets a blue toy truck for free"){
+one = 1;
+//window.alert("one = "+one);
+}
+else{
+one = false;
+}
+document.getElementById("a1").value=mylist.options[mylist.selectedIndex].text;
+
+}
+
+function answer2()
+{
+var mylist=document.getElementById("myList2");
+second = mylist.options[mylist.selectedIndex].text;
+if(second === "Does not get a blue toy truck for free"){
+two = 1;
+//window.alert("one = "+two);
+}
+else{
+two = false;
+}
+
+document.getElementById("a2").value=mylist.options[mylist.selectedIndex].text;
+}
+
+function check(){
+if(one == 1 && two == 1){
+readyToGo();
+}
+else{
+window.alert("Sorry, one or more answers are wrong...")
+}
+}
+function readyToGo(){
+window.alert("Correct!");
+document.getElementById('go').style.visibility="visible";
+}
+
+</script>
+
+<body>
+Questions for 'If/Else Loops' Part Two!
+<form>
+2.	Chirag wants to buy a toy car. If he buys the red toy car, he gets a blue toy truck for free. If he buys anything else, he doesn?t get the blue toy truck free. Represent this situation using an if/else statement.
+<br>
+if(he buys the red toy car)
+<br>
+{
+<br>
+<select id="myList1" onchange="answer1()">
+ <option></option>
+ <option>Gets a blue toy truck for free</option>
+ <option>Does not get a blue toy truck for free</option> 
+</select>
+}
+<br>
+else()
+<br>
+{
+<br>
+</form>
+
+<form>
+<select id="myList2" onchange="answer2()">
+ <option></option>
+ <option>Gets a blue toy truck for free</option>
+ <option>Does not get a blue toy truck for free</option> 
+</select>
+<br>
+}
+
+</form>
+<br>
+
+<button type = "button" id = "c" width = "500" height = "100" onclick="check()">Check</button>
+
+<form action="forloops.html">
+   <input style= "visibility:hidden" id = "go" type="submit" value="Continue!">
+</form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+    
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

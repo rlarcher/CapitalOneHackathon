@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="index.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: If/Else Statements
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <script type="text/javascript">
+<!--
+var imgObj = null;
+var animate ;
+var red= false;
+var blue=false;
+var yellow=false;
+var trig=0;
+
+function init(){
+   imgObj = document.getElementById('myImage');
+   imgObj.style.position= 'absolute'; 
+   imgObj.style.left = '400px'; 
+   imgObj.style.top ='170px';
+   
+   but1 = document.getElementById('button1');
+   but1.style.position= 'absolute'; 
+   but1.style.left = '330px'; 
+   but1.style.top ='240px';
+   
+   but2 = document.getElementById('button2');
+   but2.style.position= 'absolute'; 
+   but2.style.left = '400px'; 
+   but2.style.top ='240px';
+   
+   but3 = document.getElementById('button3');
+   but3.style.position= 'absolute'; 
+   but3.style.left = '470px'; 
+   but3.style.top ='240px';
+  
+   smile = document.getElementById('smiles');
+   smile.style.position= 'absolute'; 
+   smile.style.left = '20px'; 
+   smile.style.top ='300px';
+   
+   next = document.getElementById('myButton');
+   next.style.position= 'absolute'; 
+   next.style.left = '600px'; 
+   next.style.top ='300px';
+}
+function hide(){
+document.getElementById('button1').style.visibility="hidden";
+document.getElementById('button2').style.visibility="hidden";
+document.getElementById('button3').style.visibility="hidden";
+document.getElementById('title').style.visibility="hidden";
+//document.getElementById('myImage').style.visibility="hidden";
+}
+function show()
+{
+document.getElementById('myButton').style.visibility="visible";
+document.getElementById('smiles').style.visibility="visible";
+}
+function moveUp(){
+//distance traveled is 3 px... speed is the 100
+hide();
+if(trig<75){
+   imgObj.style.top = parseInt(imgObj.style.top) - 3 + 'px';
+   animate = setTimeout(moveUp,50);
+  // animate=sleep(10);
+   trig++;
+}
+if(trig==75){
+
+trig++;
+show();
+//hide();
+$('#ifelse3').modal('show');
+
+   }   
+}
+function moveDown(){
+//distance traveled is 3 px... speed is the 100
+hide();
+if(trig<100){
+   imgObj.style.top = parseInt(imgObj.style.top) + 3 + 'px';
+   animate = setTimeout(moveDown,50);
+  // animate=sleep(10);
+   trig++;
+}
+if(trig==100){
+
+trig++;
+show();
+hide();
+$('#ifelse3').modal('show');
+
+   }   
+}
+function moveRight(){
+//distance traveled is 3 px... speed is the 100
+hide();
+if(trig<100){
+   imgObj.style.left = parseInt(imgObj.style.left) + 3 + 'px';
+   animate = setTimeout(moveRight,50);
+  // animate=sleep(10);
+   trig++;
+}
+if(trig==100){
+
+trig++;
+show();
+
+$('#ifelse3').modal('show');
+
+   }   
+}
+
+window.onload =init;
+//-->
+</script>
+
+<div>
+<img src="images/lvl3ss.png" style="position:relative;">
+
+<img id="myImage" src="images/legoMan.png" width="55px" height="101px"   />
+<p id='title'> click on a lego below!</p>
+
+<td><img id='button1' src="images/green.png" width="50" height="50" alt="Thumbnail" onClick="moveDown();"></td>
+&nbsp;&nbsp;
+
+<td><img id='button2' src="images/pink.png" width="50" height="50" alt="Thumbnail" onClick="moveUp();"></td>
+&nbsp;&nbsp;
+
+<td><img id='button3' src="images/blue.png" width="50" height="50" alt="Thumbnail" onClick="moveRight();"></td> </center>
+
+<img id="smiles" src="images/smiles.png" style="visibility:hidden; vertical-align:top;" left="150px" top="-150px" 
+margin="auto" style="position:absolute;top:inherit;" width="200" height="200" alt="Thumbnail"/>
+
+<a href="ifelse4.html">
+
+<img id="myButton" src="images/lego_arrow.png" style="visibility:hidden" align="right" width="150" height="150" alt="Thumbnail" onClick="hide();"></a>
+</div>
+</div>
+            
+
+            <div class="col-md-4">
+                <h3>What To Do</h3>
+                <p>Lego Man moves based on the color of lego that you click on. <i>If</i> you click on one color, <i>then</i> Lego Man will move in that direction, or <i>else</i> you will move to the other color's direction.</p>
+                <p>Click on the legos to move Lego Man.</p>
+                <h3>Details</h3>
+                <ul>
+                    <li>Click on a lego</li>
+                    <li>Watch the Lego Man move</li>
+                    <li>Click the next arrow</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+     <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+    
+         <!-- Modal
+<div class="modal fade" id="ifelse3" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Congrats! You've earned a new badge!</h4>
+      </div>
+      <div class="modal-body">
+      <div class="badges">
+        	<div class="success">
+            	<img src="images/badge2.png">
+            </div>
+      </div>
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

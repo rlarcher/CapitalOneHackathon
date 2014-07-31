@@ -1,0 +1,47 @@
+h#badges{
+	
+width:100%;	
+margin:0px auto;
+	
+}
+
+.image{
+	display:inline;
+	position:relative;
+	width:50%;
+	eight:40%;
+	text-align:center;
+	
+	
+}
+
+.left{
+	float:left;
+	
+}
+
+.right{
+	
+	float:right;
+	
+}
+
+.modal-footer{
+	border-top:0px solid white;
+	
+	
+}
+
+.success{
+	
+	margin:0px auto;
+	position:relative;
+	text-align:center;
+	
+}
+
+.margin_top{
+	
+	margin-top:50px;
+	
+}

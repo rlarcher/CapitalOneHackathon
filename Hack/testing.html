@@ -1,0 +1,111 @@
+<html>
+
+<p> 
+<button type="button" onclick = "shape1change1()">
+Send shape1</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape2change1()">
+Send shape2</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape3change1()">
+Send shape3</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape4change1()">
+Send shape4</button>
+</p>
+
+<canvas id = "canvas" width = "500" height = "500">
+<script>
+var shape1 = {
+  shape:"rectangle",
+  left:100,
+  top:200
+};
+
+var shape2 = {
+  shape:"triangle",
+  left:200,
+  top:200
+};
+
+var shape3 = {
+  shape:"triangle",
+  left:300,
+  top:200
+};
+
+var shape4 = {
+  shape:"pentagon",
+  left:250,
+  top:400
+};
+
+function shape1change1() {
+  drawTriangle(shape1.left,shape1.top-50,50);
+}
+
+function shape2change1() {
+  drawRect(shape2.left,shape2.top,50);
+}
+
+function shape3change1() {
+  drawRect(shape3.left,shape3.top,50);
+}
+
+function shape4change1() {
+  drawTriangle4(400,250,50);
+}
+
+function drawTriangle(left,top,size) {
+  var tri = canvas.getContext('2d');
+  tri.moveTo(left + size/2,top);
+  tri.lineTo(left,top+size);
+  tri.lineTo(left+size,top+size);
+  tri.lineTo(left+size/2,top);
+  tri.closePath();
+  tri.fill();
+}
+
+function drawTriangle4(left,top,size) {
+  var tri = canvas.getContext('2d');
+  tri.moveTo(left,top);
+  tri.lineTo(left+size/2,top+size);
+  tri.lineTo(left+size,top);
+  tri.lineTo(left,top);
+  tri.closePath();
+  tri.fill();
+}
+
+function drawRect(left,top,size) {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillRect(left,top,size,size);
+  }
+}
+drawRect(100,200,50);
+drawTriangle(200,200,50);
+drawTriangle(300,200,50);
+drawRect(400,200,50);
+drawTriangle(400,150,50);
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</canvas>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    <a href="index.php">Logout</a>
+                    </li>
+                                    </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: For Loops
+                    
+                </h1>
+
+
+       	Imagine you're teaching your little brother how to fix breakfast. A list of the steps would be something like:
+
+<br>1. Get two pieces of bread from the breadbox
+<br>2.	Put the bread into the toaster
+<br>3.	Toast bread
+<br>4.	When toast pops out of the toaster, take it out and put it on the plate
+<br>5.	Put butter on the toast and enjoy
+<br>
+<br> 
+Well, your little brother probably has seen your parents fix breakfast before, so he probably wouldn?t need all of these instructions listed out. But what if your brother had never seen anyone make toast? Each of those five steps has to be done once, so you can?t leave any of that information out.
+<br>
+<br> 
+What if you were making pancakes and the batter needed 10 teaspoons of flour? Would you include this information in your instructions like this:
+<br> 
+1. Get the mixing bowl and bag of flour
+<br>
+2.	Put a teaspoon of flour into the bowl
+<br>
+3.	Put a teaspoon of flour into the bowl
+<br>
+4.	Put a teaspoon of flour into the bowl
+<br>
+5.	Put a teaspoon of flour into the bowl
+<br>
+6.	Put a teaspoon of flour into the bowl
+<br>
+7.	Put a teaspoon of flour into the bowl
+<br>
+8.	Put a teaspoon of flour into the bowl
+<br>
+9.	Put a teaspoon of flour into the bowl
+<br>
+10.     Put a teaspoon of flour into the bowl
+<br>
+11.        Put a teaspoon of flour into the bowl
+<br>
+<br> 
+Probably not. It would make a lot more sense to tell him:
+<br>1. Get the mixing bowl and a bag of flour
+<br>2.	Put 10 teaspoons of flour in the bowl
+<br>
+<br>
+When you work with a computer, you need give it the instructions for any process that you want to get done. Computer instructions are pretty similar to the instructions you?d give your little brother because you might have to write out separate, unique steps?like with the toast?or you can shorten a repetitive process by summarizing into one step, like with the flour.
+<br>
+<br>
+       	If you were putting 10 teaspoons of flour into a bowl, you would need keep track of some pieces of important information like:
+  <br>     
+1. What you are doing (putting teaspoons of flour into a bowl)
+<br>
+2.	How many teaspoons of flour have you put in so far? (0 when you start, but this number will increase as you put more spoonfuls in)
+<br>
+3.	How many teaspoons of flour do you still have to put in? (10 when you start, but this number will decrease as you put more spoonfuls in)
+<br> 
+?while actually putting each spoonful into the bowl. 
+<br>
+<br>
+When you start with an empty bowl, the process feels something like:
+<br> 
+1. Number of teaspoons put in so far = 0. Number of teaspoons left = 10. Pour in a teaspoon of flour.
+<br>2.	Number of teaspoons put in so far = 1. Number of teaspoons left = 9. Pour in a teaspoon of flour.
+<br>3.	Number of teaspoons put in so far = 2. Number of teaspoons left = 8. Pour in a teaspoon of flour.
+<br>4.	Number of teaspoons put in so far = 3. Number of teaspoons left = 7. Pour in a teaspoon of flour.
+<br>5.	Number of teaspoons put in so far = 4. Number of teaspoons left = 6. Pour in a teaspoon of flour.
+<br>6.	Number of teaspoons put in so far = 5. Number of teaspoons left = 5. Pour in a teaspoon of flour.
+<br>7.	Number of teaspoons put in so far = 6. Number of teaspoons left = 4. Pour in a teaspoon of flour.
+<br>8.	Number of teaspoons put in so far = 7. Number of teaspoons left = 3. Pour in a teaspoon of flour.
+<br>9.	Number of teaspoons put in so far = 8. Number of teaspoons left = 2. Pour in a teaspoon of flour.
+<br>10. Number of teaspoons put in so far = 9. Number of teaspoons left = 1. Pour in a teaspoon of flour.
+<br>11.  Number of teaspoons put in so far = 10. Number of teaspoons left = 0. Stop!
+<br>
+<br>       
+Computers use a pretty neat way to package all of this information into something called a for loop. A for loop is pretty useful in a situation like this, where you?re doing something a bunch of times and you want to keep track of how many times you did it. A for loop packages information together in a small, easy-to-follow way that looks strange at first, but is actually pretty simple and convenient.
+<br>
+<br>
+The basic structure is:
+<br>
+for (a count of how many times you did an action and how many more times you need to do it)
+<br>{
+<br>
+       	what are you trying to do
+<br>
+}
+<br>
+<br>
+       	In the context of putting teaspoons of flour in a bowl, it would be:
+<br>
+       	for(# of spoonfuls you?ve put in WHEN YOU START; # of total spoonfuls you want; how to adjust the number of spoonfuls you?ve put in so far as you add more flour)
+
+<br>{
+
+<br>       add a spoonful of flour in
+
+<br>}
+<br>
+<br>
+Some notes on the values in the previous skeleton:
+<br>1. Starting point: The number of spoonfuls you?ve put in when you start is usually 0. It wouldn?t really make sense to start the count at a number at, say, unless you?re writing this for loop to model a situation where your brother already put in 3 spoonfuls and you?re finishing up for him.
+
+<br>2.	Ending point: The # of total spoonfuls that you need is pretty much what it seems. We need 10 total spoonfuls, so that?s the value we need.
+
+<br>3.	How you got from start to finish: You currently have 3 teaspoons of flour in the bowl and then you add another. How did that number change? You just add 1 to 3. The same is true when you go from 5 to 6 teaspoons, 6 to 7, et cetera. You can symbolize this change by writing: teaspoons + 1.
+
+<br><br>But writing all of these words out takes a long time. What if we used the letter ?s? to symbolize the number of teaspoons we?ve put in? Now we can rewrite the information in the previous list as:
+
+<br>1. Starting point: int s = 0 (?int? just reminds us that you mean s is an integer, not a 0 symbol)
+
+<br>2.	Ending point: s < 10 (this tells us that you keep going until you hit ten teaspoons, which is when you stop)
+
+<br>3.	How you got from start to finish: s++. This means the same thing as s + 1, but it?s easier to type, especially if you?re writing this over and over again.
+
+<br><br>Putting it all together, it reads like:
+
+<br>for (int s = 0; s < 10; s++){
+
+<br>       put a spoonful of flour in the bowl;
+<br>
+}
+
+
+
+
+
+<a href="forQuiz.html" class="btn btn-primary right margin_top" style="margin-top:70px; margin-bottom:30px;">Take a quiz!</a>
+
+<br><br><br>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+    
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

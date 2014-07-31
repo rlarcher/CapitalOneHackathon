@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                	<li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: For Loops
+                </h1>
+            </div>
+
+        </div>
+        
+        <div class="row">
+
+            <div class="col-lg-12">
+                <p>Lego Man moves step-by-step to his house. You could tell him to move one step, then move another step, then another... or, you could tell him to move by one step <i>five times</i>.</p>
+                <p>Choose the number of steps in the drop-down menu to take him right to his house.</p>
+                <a href="forlesson.html" class="btn btn-primary right margin_top" style="margin-top:70px;">Go to the next lesson!</a>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <script>
+
+var imgObj = null;
+var houseObj = null;
+var list = null;
+var spot = 0;
+var done = false;
+
+function init() {
+	imgObj = document.getElementById("myImage");
+	imgObj.style.position = "absolute";
+	imgObj.style.left = '30px'; 
+    imgObj.style.top ='250px';
+
+    list = document.getElementById("myList");
+    list.style.position = "absolute";
+    list.style.left = '100px';
+    list.style.top = '100px';
+
+    houseObj = document.getElementById("house");
+    houseObj.style.position = "absolute";
+    houseObj.style.left = '730px';
+    houseObj.style.top = '250px';
+
+    rect1 = document.getElementById('rectangle1');
+    rect1.style.position = "absolute";
+    rect1.style.left = '140px';
+    rect1.style.top = '330px';
+
+    rect2 = document.getElementById('rectangle2');
+    rect2.style.position = "absolute";
+    rect2.style.left = '245px';
+    rect2.style.top = '330px';
+
+    rect3 = document.getElementById('rectangle3');
+    rect3.style.position = "absolute";
+    rect3.style.left = '350px';
+    rect3.style.top = '330px';
+
+    rect4 = document.getElementById('rectangle4');
+    rect4.style.position = "absolute";
+    rect4.style.left = '455px';
+    rect4.style.top = '330px';
+
+    rect5 = document.getElementById('rectangle5');
+    rect5.style.position = "absolute";
+    rect5.style.left = '560px';
+    rect5.style.top = '330px';
+}
+
+
+function numberSteps() {
+	var mylist = document.getElementById("myList");
+	return parseInt(mylist.options[mylist.selectedIndex].text);
+}
+
+function moveRight(){
+//distance traveled is 3 px... speed is the 100
+   imgObj.style.left = parseInt(imgObj.style.left) + 105 + 'px';
+   rect5 = document.getElementById('rectangle5');
+   rect4 = document.getElementById('rectangle4');
+   rect3 = document.getElementById('rectangle3');
+   rect2 = document.getElementById('rectangle2');
+   rect1 = document.getElementById('rectangle1');
+   spot++;
+   if(spot >= 5 && !done) {
+     rect4.style.visibility = "visible";  	
+     rect1.style.visibility = "visible";
+     rect2.style.visibility = "visible";
+     rect3.style.visibility = "visible";
+     rect5.style.visibility = "hidden";
+     alert("You lose");
+     return;
+   }
+   switch(spot) {
+      case(1):
+      {
+        rect1.style.visibility = "hidden"; 
+        break; 	
+      }
+      case(2):
+      {
+        rect2.style.visibility = "hidden"; 
+        rect1.style.visibility = "visible"; 	
+        break;
+      }
+       case(3):
+      {
+        rect3.style.visibility = "hidden"; 
+        rect2.style.visibility = "visible";
+        rect1.style.visibility = "visible"; 	
+        break;
+      }
+        case(4):
+      {
+        rect4.style.visibility = "hidden";  	
+        rect1.style.visibility = "visible";
+        rect2.style.visibility = "visible";
+        rect3.style.visibility = "visible";
+        break;
+      }
+       case(5):
+      {
+        rect5.style.visibility = "hidden"; 
+        rect4.style.visibility = "visible";  	
+        rect1.style.visibility = "visible";
+        rect2.style.visibility = "visible";
+        rect3.style.visibility = "visible";
+        alert("You win!");
+		$('#for').modal('show');
+        break;
+      }
+   }
+}
+
+
+function run() {
+  var numberOfSteps = numberSteps();
+  for(var i = 0; i < numberOfSteps; i++) {
+  	if(i == numberOfSteps - 1) done = true;
+  	if(i == 0) done = false;
+  	moveRight();
+  }
+}
+
+window.onload = init;
+</script>
+<div>
+<img id = "myImage" src = "images/legoMan.png" height = "160" width = "100">
+<img id = "house" src = "images/house.png" height = "300" width = "250">
+<img id = "rectangle1" src = "images/rectangle.png" height = "100" width = "105">
+<img id = "rectangle2" src = "images/rectangle.png" height = "100" width = "105">
+<img id = "rectangle3" src = "images/rectangle.png" height = "100" width = "105">
+<img id = "rectangle4" src = "images/rectangle.png" height = "100" width = "105">
+<img id = "rectangle5" src = "images/rectangle.png" height = "100" width = "105">
+
+
+<select id="myList" onchange="run()">
+  <option></option>
+  <option>1</option>
+  <option>2</option>  
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+<p></p>
+
+</div>
+            </div>
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+    
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+ <!-- Modal -->
+<div class="modal fade" id="for" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Congrats! You've earned a new badge!</h4>
+      </div>
+      <div class="modal-body">
+      <div class="badges">
+        	<div class="success">
+            	<img src="images/badge4.png">
+            </div>
+      </div>
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

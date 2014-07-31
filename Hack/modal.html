@@ -1,0 +1,44 @@
+    <link href="css/bootstrap.css" rel="stylesheet">
+        <script src="js/jquery-1.10.2.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+    
+
+<button id="first_button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal" data-backdrop="static">Login</button>
+
+
+
+
+ <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body">
+       
+     
+        <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="E-mail" name="email" type="text" id="email_log" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" placeholder="Password" name="password" type="password" id="password_log"required>
+              </div>
+            </fieldset>
+            
+        <div id="error_log">
+             
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button style="margin-right:10px;"type="submit" id="login" name="login" value="login" class="btn btn-success btn-padding">Log In</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Code: Kids</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    	<a href="index.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: Introduction to Functions
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <p> 
+<button type="button" onclick = "shape1change1()" class="btn btn-primary">
+Send shape1</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape2change1()" class="btn btn-primary">
+Send shape2</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape3change1()" class="btn btn-primary">
+Send shape3</button>
+</p>
+
+<p> 
+<button type="button" onclick = "shape4change1()" class="btn btn-primary">
+Send shape4</button>
+</p>
+
+<canvas id = "canvas" width = "500" height = "300">
+<script>
+var shape1 = {
+  shape:"rectangle",
+  left:100,
+  top:200
+};
+
+var shape2 = {
+  shape:"triangle",
+  left:200,
+  top:200
+};
+
+var shape3 = {
+  shape:"triangle",
+  left:300,
+  top:200
+};
+
+var shape4 = {
+  shape:"pentagon",
+  left:250,
+  top:400
+};
+
+function shape1change1() {
+  drawTriangle(shape1.left,shape1.top-50,50);
+}
+
+function shape2change1() {
+  drawRect(shape2.left,shape2.top,50);
+}
+
+function shape3change1() {
+  drawRect(shape3.left,shape3.top,50);
+}
+
+function shape4change1() {
+  drawTriangle4(400,250,50);
+  $('#function').modal('show');
+}
+
+function drawTriangle(left,top,size) {
+  var tri = canvas.getContext('2d');
+  tri.moveTo(left + size/2,top);
+  tri.lineTo(left,top+size);
+  tri.lineTo(left+size,top+size);
+  tri.lineTo(left+size/2,top);
+  tri.closePath();
+  tri.fill();
+}
+
+function drawTriangle4(left,top,size) {
+  var tri = canvas.getContext('2d');
+  tri.moveTo(left,top);
+  tri.lineTo(left+size/2,top+size);
+  tri.lineTo(left+size,top);
+  tri.lineTo(left,top);
+  tri.closePath();
+  tri.fill();
+}
+
+function drawRect(left,top,size) {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillRect(left,top,size,size);
+  }
+}
+drawRect(100,200,50);
+drawTriangle(200,200,50);
+drawTriangle(300,200,50);
+drawRect(400,200,50);
+drawTriangle(400,150,50);
+
+</script>
+</canvas>
+                </div>
+
+            <div class="col-md-4">
+                <h3>What To Do</h3>
+                <p>Computers follow instructions and execute <i>functions</i>. Simple functions do simple things, like add a side to a polygon.</p>
+                <p>Click the buttons to see how a computer executes very simple functions.</p>
+                
+                
+                
+                
+               
+            </div>
+
+        </div>
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+     <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+ <!-- Modal -->
+<div class="modal fade" id="function" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Congrats! You've earned a new badge!</h4>
+      </div>
+      <div class="modal-body">
+      <div class="badges">
+        	<div class="success">
+            	<img src="images/badge1.png">
+            </div>
+      </div>
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+    
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

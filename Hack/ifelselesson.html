@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#003">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="" height="56">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                    	<a href="#" id="first_button" data-toggle="modal" data-target="#loginModal" data-backdrop="static">
+						Badges
+                        </a>
+                    </li>
+                    <li>
+                    <a href="index.php">Logout</a>
+                    </li>
+                                    </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    
+   	<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="margin-top:20px;">Lesson: For Loops
+                    
+                </h1>
+
+
+The newest X-Men movie is coming out on Friday and you?re planning to see it with your friends: Steve, Tameka, Chen, and Sonali. You know that Tameka, Chen, and Sonali can definitely make it on Friday. Unfortunately, Steve got a bad grade on the last math test and might be grounded.
+
+You?re responsible for buying the movie tickets. How many tickets will you buy? Well, it depends. If Steve is grounded, then he can?t come, so only 4 of you need tickets. But if Steve can come, then you will need 5. Steve?s freedom will determine how many tickets you get.
+<br> 
+<br>
+You can model your decision-making like this:
+<br> 
+       	        	if (Steve is grounded)
+<br>{      	
+<br> 
+                               	buy 4 tickets;
+
+<br>}
+<br> 
+else
+<br>{
+<br>        	buy 5 tickets;
+
+<br>}
+<br> 
+<br>So what does this code say? Let?s look at it bit by bit. First:
+    <br>   if (Steve is grounded)
+<br>{      	
+<br>
+                               	buy 4 tickets;
+<br> 
+}
+<br>
+<br>
+You can think of this phrase as basically saying, ?If it is true that Steve is grounded, then do what?s inside these braces.? In this case, the stuff inside the braces is to buy 4 tickets.
+But what happens when isn?t true that Steve is grounded? Then you completely ignore what is inside the first set of braces and jump to
+<br>	else
+<br>{
+   <br>    	buy 5 tickets;
+<br> 
+}
+<br>
+<br>
+Now let us consider the same situation but suddenly your another friend Tim wants to join too. However, his parents might take him to a concert instead. Therefore, now you have to add details about Tim in your if/else statement too. 
+You?re once again responsible for buying the movie tickets. Since Tim wants to join you, how many tickets will you need to buy? Well, it depends. If Steve is grounded and Tim?s parents decide to take him to a concert instead, then both can?t come, so only 4 of you need tickets. But if Steve can come or if Tim can come, then you will need 5. If both Steve and Tim can come, then you will need 6 tickets. Steve?s freedom and Tim?s parent?s decision will determine how many tickets you get.
+<br>
+<br>
+You can model your decision-making like this:
+<br>
+if (Steve is grounded and Tim?s parents decide to take him to a concert)
+<br>{      	
+<br>
+                               	buy 4 tickets;
+<br> 
+}
+<br>
+else if (Steve is grounded or Tim?s parents decide to take him to a concert)
+<br>{
+   <br>    	buy 5 tickets;
+
+<br>}
+<br>
+else()
+<br>{
+<br>buy 6 tickets;
+<br>}
+<br>
+<br>
+So what does this code say? Let?s look at it bit by bit. First:
+<br>
+if (Steve is grounded and Tim?s parents decide to take him to a concert)
+<br>{      	
+<br>                               buy 4 tickets;
+<br>
+}
+<br>
+<br>
+You can think of this phrase as basically saying, ?If it is true that Steve is grounded and it is true that Tim?s parents decide to take him to a concert, then do what?s inside these braces.? In this case, the stuff inside the braces is to buy 4 tickets.
+<br> 
+<br>
+But what happens when either Steve of Tim can come to watch the movie? Then you completely ignore what is inside the first set of braces and jump to
+<br>
+else if (Steve is grounded or Tim?s parents decide to take him to a concert)
+<br>{
+<br>       buy 5 tickets;
+
+<br>}
+<br>
+<br>Note that instead of using else(), we use else if() this time for our second statement. The reason for this is because now we have to look at another condition, which is whether either Steve or Tim can come to the movie. If Steve is not grounded and Tim?s parents don?t decide to take him to a concert, then both can come. In this situation, you can ignore both the first and second set of braces and jump to the third set 
+<br>
+else()
+<br>{
+<br>	buy 6 tickets;
+<br>}
+<br>
+
+<a href="ifelseQuiz.html" class="btn btn-primary right margin_top" style="margin-top:70px; margin-bottom:30px;">Take a quiz!</a>
+
+<br><br><br>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+   
+   
+   
+    <!-- /.container -->
+    
+    
+    
+    
+    <!-- Modal -->
+<div class="modal fade" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Badges</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="badges">
+        	<div class="image left">
+            	<img src="images/badge1.png">
+            </div>
+            
+            <div class="image right">
+           		 <img src="images/badge2.png">
+            </div>
+            
+            <div class="image left">
+            	<img src="images/badge3.png">
+            </div>
+            
+            <div class="image right">
+            	<img src="images/badge4.png">
+            </div>
+        
+        
+        </div>
+     
+        
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
